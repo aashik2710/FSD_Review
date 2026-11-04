@@ -47,10 +47,11 @@ function App() {
         <AlertProvider>
           <BrowserRouter>
             <Routes>
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-              
-              <Route path="/" element={<AppLayout />}>
+              <Route path="/" element={<Navigate to="/login" replace />} />
+                <Route path="/login" element={<Login />} />
+                  <Route path="/register" element={<Register />} />
+
+                      <Route path="/" element={<AppLayout />}>
                 <Route index element={<Dashboard />} />
                 <Route
                   path="companies"
